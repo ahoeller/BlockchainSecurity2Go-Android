@@ -48,14 +48,14 @@ before_install:
   - yes | sdkmanager "build-tools;25.0.3"
   
    # Platform tools
-  - sdkmanager "emulator" "tools" "platform-tools" > /dev/null
+  - sdkmanager "emulator" "tools" "platform-tools" #> /dev/null
   - sdkmanager --list | head -15
   
   # install older build tools (for emulator)
-  - sdkmanager "build-tools;25.0.2" "platforms;android-25" > /dev/null
+  - sdkmanager "build-tools;25.0.2" "platforms;android-25" #> /dev/null
   
   # Create and start emulator
-  - sdkmanager "system-images;android-22;armeabi-v7a" > /dev/null
+  - sdkmanager "system-images;android-22;armeabi-v7a" #> /dev/null
   
   - sdkmanager --list | head -15
   - echo no | avdmanager create avd -n test -k "system-images;android-22;armeabi-v7a"
