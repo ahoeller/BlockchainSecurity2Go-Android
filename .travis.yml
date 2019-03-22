@@ -48,7 +48,9 @@ before_install:
   - yes | sdkmanager "build-tools;25.0.3"
   
    # Platform tools
-  - sdkmanager "emulator" "tools" "platform-tools" #> /dev/null
+  - yes | sdkmanager "emulator" #> /dev/null
+  - yes | sdkmanager "tools"
+  - yes | sdkmanager "platform-tools"
   - sdkmanager --list | head -15
   
   # install older build tools (for emulator)
